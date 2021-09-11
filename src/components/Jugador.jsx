@@ -4,22 +4,21 @@ import './styles/Jugador.scss'
 
 const Jugador = () => {
 
-    const { nombre } = useParams()
-
+    const { id } = useParams()
+    
     const [jugador, setJugador] = useState({})
-
+    
     useEffect(() => {
+        async function consulta() {
+    
+            const query = await fetch(`http://lookup-service-prod.mlb.com/json/named.player_info.bam?sport_code='mlb'&player_id='${id}'`).then(response => response.json())
+    
+            const data = query.player_info.queryResults.row
+            setJugador(data)
+        }
         consulta()
     }, [])
 
-    async function consulta() {
-
-        const query = await fetch(`http://lookup-service-prod.mlb.com/json/named.search_player_all.bam?sport_code='mlb'&active_sw='Y'&name_part='${nombre}%25'`).then(response => response.json())
-
-        const data = query.search_player_all.queryResults.row
-        console.log(data);
-        setJugador(data)
-    }
 
     return (
         <div className="JugadorContendedor">
@@ -34,15 +33,15 @@ const Jugador = () => {
                             </li>
                             <li>
                                 <h3>posicion:</h3>
-                                <p>{jugador.position}</p>
+                                <p>{jugador.primary_position_txt}</p>
                             </li>
                             <li>
                                 <h3>equipo:</h3>
-                                <p>{jugador.team_full}</p>
+                                <p>{jugador.team_name}</p>
                             </li>
                             <li>
-                                <h3>liga:</h3>
-                                <p>{jugador.league}</p>
+                                <h3>numero:</h3>
+                                <p>{jugador.jersey_number}</p>
                             </li>
                             <li>
                                 <h3>batea:</h3>
