@@ -23,10 +23,14 @@ $color2: #222831;
             text-align: center;
         }
         li .enlace {
-            padding: 10px 33%;
+            padding: 10px 20px;
             text-decoration: none;
             color: $color2;
             font-size: 25px;
+        }
+        .enlace:hover{
+            background: $color2;
+            color: $color1;
         }
     }
 }
