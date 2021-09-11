@@ -1,0 +1,50 @@
+// imports
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Tamma+2:wght@500&display=swap');
+
+// variables
+$color1: #32e0c4;
+$color2: #222831;
+
+
+.Navcontenedor {
+    width: 100%;
+    height: 60px;
+    background-color: $color1;
+    nav ul {
+        width: 100%;
+        height: 55px;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        font-family: 'Baloo Tamma 2', cursive;
+        list-style: none;
+        li{
+            width: 100%;
+            text-align: center;
+        }
+        li .enlace {
+            padding: 10px 33%;
+            text-decoration: none;
+            color: $color2;
+            font-size: 25px;
+        }
+    }
+}
+
+// divider
+.custom-shape-divider-top-1631318270 {
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+}
+
+.custom-shape-divider-top-1631318270 svg {
+    position: relative;
+    display: block;
+    width: calc(182% + 1.3px);
+    height: 100px;
+}
+
+.custom-shape-divider-top-1631318270 .shape-fill {
+    fill: $color1;
+}

@@ -1,0 +1,32 @@
+// imports
+@import url('https://fonts.googleapis.com/css2?family=Capriola&display=swap');
+
+$color1: #32E0C4;
+$color2: #222831;
+
+.Jugcontenedor{
+    width: 100%;
+    margin-top: 100px;
+    text-align: center;
+    font-family: 'Capriola', sans-serif;
+    p{
+        margin: 10px 0 20px 0;
+    }
+    label{
+        font-size: 20px;
+    }
+    input{
+        height: 25px;
+    }
+    .btn-submit{
+        cursor: pointer;
+        display: block;
+        margin: 30px auto;
+        width: 200px;
+        background: $color1;
+        border: none;
+        padding: 10px 5px;
+        color: $color2;
+        text-decoration: none;
+    }
+}
